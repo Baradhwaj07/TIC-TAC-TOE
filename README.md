@@ -32,6 +32,10 @@ A console-based Tic-Tac-Toe game where a human plays against the computer. This 
 - **Goal**: Update the board with the given symbol.
 - **Concepts**: State Update, Array Indexing, Reusable Methods.
 
+### UC7: Computer Makes a Random Move (Easy Level)
+- **Goal**: Allow the computer to make a random valid move.
+- **Concepts**: Random Generation, Loop Until Valid, Logic Reuse.
+
 ## How to Run
 
 1. **Compile**:
