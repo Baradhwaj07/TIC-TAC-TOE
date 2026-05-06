@@ -16,6 +16,10 @@ A console-based Tic-Tac-Toe game where a human plays against the computer. This 
 - **Goal**: Randomly decide who starts and assign symbols (X/O).
 - **Concepts**: Random Number Generation, Conditional Logic, Game State.
 
+### UC3: Accept User Slot Input
+- **Goal**: Allow the user to enter a slot number (1-9).
+- **Concepts**: User Input Handling, Scanner, Method Creation.
+
 ## How to Run
 
 1. **Compile**:
