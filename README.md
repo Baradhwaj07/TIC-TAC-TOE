@@ -36,6 +36,10 @@ A console-based Tic-Tac-Toe game where a human plays against the computer. This 
 - **Goal**: Allow the computer to make a random valid move.
 - **Concepts**: Random Generation, Loop Until Valid, Logic Reuse.
 
+### UC8: Continuous Turn-Based Game Loop
+- **Goal**: Continue gameplay until win or draw is detected.
+- **Concepts**: While Loop, Game State Flags, Turn Switching.
+
 ## How to Run
 
 1. **Compile**:

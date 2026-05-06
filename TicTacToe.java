@@ -3,8 +3,8 @@ import java.util.Scanner;
 
 /**
  * TicTacToe
- * UC7 allows the computer to make a random valid move
- * by reusing slot conversion and validation logic.
+ * UC8 controls the continuous game loop and alternates
+ * turns until the game ends.
  */
 public class TicTacToe {
 
@@ -15,14 +15,54 @@ public class TicTacToe {
     };
     static boolean isHumanTurn;
     static char humanSymbol;
-    static char computerSymbol = 'O';
+    static char computerSymbol;
+    static boolean gameOver = false;
 
     /**
-     * Entry point of the program. Triggers the computer move.
+     * Entry point of the program. Demonstrates the structure
+     * of a continuous game loop.
      */
     public static void main(String[] args) {
-        computerMove();
-        printBoard();
+        initializeBoard();
+        tossAndAssignSymbols();
+        displayTossResult();
+
+        while (!gameOver) {
+            printBoard();
+            if (isHumanTurn) {
+                humanMove();
+            } else {
+                computerMove();
+            }
+            
+            // Switch turns
+            isHumanTurn = !isHumanTurn;
+
+            // Simple placeholder to prevent infinite loop for now if board is full
+            // (Win/Draw detection will be implemented in later use cases)
+            if (isBoardFull()) {
+                gameOver = true;
+                printBoard();
+                System.out.println("Game over! Board is full.");
+            }
+        }
+    }
+
+    /**
+     * Handles the human player's turn.
+     */
+    static void humanMove() {
+        int row, col;
+        do {
+            int slot = getUsersSlot();
+            row = getRowFromSlot(slot);
+            col = getColFromSlot(slot);
+            if (!isValidMove(row, col)) {
+                System.out.println("Invalid move! Try again.");
+            }
+        } while (!isValidMove(row, col));
+        
+        placeMove(row, col, humanSymbol);
     }
 
     /**
@@ -30,16 +70,29 @@ public class TicTacToe {
      * then places the computer symbol on the board.
      */
     static void computerMove() {
+        System.out.println("Computer's turn...");
         Random random = new Random();
         int row, col;
         do {
-            int slot = random.nextInt(9) + 1; // 1-9
+            int slot = random.nextInt(9) + 1;
             row = getRowFromSlot(slot);
             col = getColFromSlot(slot);
         } while (!isValidMove(row, col));
 
         System.out.println("Computer chose slot: " + (row * 3 + col + 1));
         placeMove(row, col, computerSymbol);
+    }
+
+    /**
+     * Checks if the board is completely filled.
+     */
+    static boolean isBoardFull() {
+        for (int row = 0; row < 3; row++) {
+            for (int col = 0; col < 3; col++) {
+                if (board[row][col] == '-') return false;
+            }
+        }
+        return true;
     }
 
     /**
