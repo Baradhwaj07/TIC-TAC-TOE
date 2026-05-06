@@ -1,0 +1,29 @@
+# Java compiled files
+*.class
+
+# Log files
+*.log
+
+# BlueJ files
+*.ctxt
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Package Files
+*.jar
+*.war
+*.ear
+
+# Virtual machines
+hs_err_pid*
+
+# IDE Specific Files
+.project
+.classpath
+.settings/
+bin/
+target/
+.idea/
+*.iml
+.vscode/
