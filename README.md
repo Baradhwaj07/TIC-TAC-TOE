@@ -28,6 +28,10 @@ A console-based Tic-Tac-Toe game where a human plays against the computer. This 
 - **Goal**: Ensure the move is within bounds and the cell is empty.
 - **Concepts**: Conditional Logic, Boundary Checking, Defensive Programming.
 
+### UC6: Place Move on Board
+- **Goal**: Update the board with the given symbol.
+- **Concepts**: State Update, Array Indexing, Reusable Methods.
+
 ## How to Run
 
 1. **Compile**:
