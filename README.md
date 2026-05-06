@@ -12,6 +12,10 @@ A console-based Tic-Tac-Toe game where a human plays against the computer. This 
 - **Goal**: Initialize a 3x3 board and display it on the console.
 - **Concepts**: 2D Arrays, Nested Loops, Console Formatting.
 
+### UC2: Toss to Decide First Player and Symbol
+- **Goal**: Randomly decide who starts and assign symbols (X/O).
+- **Concepts**: Random Number Generation, Conditional Logic, Game State.
+
 ## How to Run
 
 1. **Compile**:
