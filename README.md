@@ -44,6 +44,10 @@ A console-based Tic-Tac-Toe game where a human plays against the computer. This 
 - **Goal**: Detect if a player has won the game.
 - **Concepts**: Pattern Matching, Logical Conditions, Loop-Based Checks.
 
+### UC10: Detect Draw Condition
+- **Goal**: Detect when no moves remain and no winner exists.
+- **Concepts**: Counting Logic, Loop Traversal, Boolean Flags.
+
 ## How to Run
 
 1. **Compile**:
