@@ -20,6 +20,10 @@ A console-based Tic-Tac-Toe game where a human plays against the computer. This 
 - **Goal**: Allow the user to enter a slot number (1-9).
 - **Concepts**: User Input Handling, Scanner, Method Creation.
 
+### UC4: Slot to Board Index Conversion
+- **Goal**: Convert slot (1–9) to valid row and column indices.
+- **Concepts**: Zero-based Indexing, Division and Modulo.
+
 ## How to Run
 
 1. **Compile**:
