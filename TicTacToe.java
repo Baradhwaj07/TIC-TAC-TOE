@@ -3,24 +3,36 @@ import java.util.Scanner;
 
 /**
  * TicTacToe
- * UC4 converts a user-entered slot number (1-9) into corresponding
- * row and column indices of a 2D array.
+ * UC5 validates whether a move is inside the board boundaries
+ * and whether the selected cell is empty.
  */
 public class TicTacToe {
 
-    static char[][] board = new char[3][3];
+    static char[][] board = {
+        {'-', '-', '-'},
+        {'-', '-', '-'},
+        {'-', '-', '-'}
+    };
     static boolean isHumanTurn;
     static char humanSymbol;
     static char computerSymbol;
 
     /**
-     * Entry point of the program. Demonstrates slot-to-index conversion
-     * using a sample slot value.
+     * Entry point of the program. Tests the validation logic
+     * using sample row and column values.
      */
     public static void main(String[] args) {
-        int slot = 7;
-        System.out.println("Row: " + getRowFromSlot(slot));
-        System.out.println("Column: " + getColFromSlot(slot));
+        System.out.println(isValidMove(1, 1));
+    }
+
+    /**
+     * Checks if the given row and column are within bounds
+     * and if the target cell is empty.
+     * Input: Row, Column
+     * Output: true if valid, false otherwise.
+     */
+    static boolean isValidMove(int row, int col) {
+        return (row >= 0 && row < 3) && (col >= 0 && col < 3) && (board[row][col] == '-');
     }
 
     /**

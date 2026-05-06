@@ -24,6 +24,10 @@ A console-based Tic-Tac-Toe game where a human plays against the computer. This 
 - **Goal**: Convert slot (1–9) to valid row and column indices.
 - **Concepts**: Zero-based Indexing, Division and Modulo.
 
+### UC5: Validate User Move
+- **Goal**: Ensure the move is within bounds and the cell is empty.
+- **Concepts**: Conditional Logic, Boundary Checking, Defensive Programming.
+
 ## How to Run
 
 1. **Compile**:
