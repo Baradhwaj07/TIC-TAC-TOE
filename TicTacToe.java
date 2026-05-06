@@ -3,8 +3,8 @@ import java.util.Scanner;
 
 /**
  * TicTacToe
- * UC8 controls the continuous game loop and alternates
- * turns until the game ends.
+ * UC9 checks whether a player has won by examining
+ * rows, columns, and diagonals.
  */
 public class TicTacToe {
 
@@ -19,34 +19,35 @@ public class TicTacToe {
     static boolean gameOver = false;
 
     /**
-     * Entry point of the program. Demonstrates the structure
-     * of a continuous game loop.
+     * Entry point of the program. Tests the win-check logic.
      */
     public static void main(String[] args) {
-        initializeBoard();
-        tossAndAssignSymbols();
-        displayTossResult();
+        System.out.println(hasWon('X'));
+    }
 
-        while (!gameOver) {
-            printBoard();
-            if (isHumanTurn) {
-                humanMove();
-            } else {
-                computerMove();
-            }
-            
-            // Switch turns
-            isHumanTurn = !isHumanTurn;
-
-            // Simple placeholder to prevent infinite loop for now if board is full
-            // (Win/Draw detection will be implemented in later use cases)
-            if (isBoardFull()) {
-                gameOver = true;
-                printBoard();
-                System.out.println("Game over! Board is full.");
+    /**
+     * Checks all possible winning patterns for the given symbol.
+     * Input: Player symbol
+     * Output: true if win detected.
+     */
+    static boolean hasWon(char symbol) {
+        // Check rows and columns
+        for (int i = 0; i < 3; i++) {
+            if ((board[i][0] == symbol && board[i][1] == symbol && board[i][2] == symbol) ||
+                (board[0][i] == symbol && board[1][i] == symbol && board[2][i] == symbol)) {
+                return true;
             }
         }
+        // Check diagonals
+        return (board[0][0] == symbol && board[1][1] == symbol && board[2][2] == symbol) ||
+               (board[0][2] == symbol && board[1][1] == symbol && board[2][0] == symbol);
     }
+
+    /**
+     * Handles the human player's turn.
+     */
+    static void humanMove() {
+// ... existing logic ...
 
     /**
      * Handles the human player's turn.
